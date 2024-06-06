@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Auto Play Pause",
+    "version": "1.0.0",
+    "description": "Automatically play and pause YouTube videos when switching tabs.",
+    "author":"Tanishq Dawar",
+    
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "*://www.youtube.com/*"
+    ],
+    "action": {
+      "default_popup": "index.html",
+    "default_icon": "logo.png"
+    },
+    "icons":{
+       "128": "logo.png"
+    }
+  }
